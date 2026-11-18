@@ -1,0 +1,133 @@
+<?xml version="1.0" ?>
+<!-- Arşivdeki havuz ve araç gövdesi. Yatay itki gövdeye net kuvvet olarak uygulanır. -->
+<sdf version="1.8">
+  <world name="pool">
+    <physics name="adim" type="ignored">
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <plugin filename="ignition-gazebo-apply-link-wrench-system" name="ignition::gazebo::systems::ApplyLinkWrench"/>
+
+    <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics"/>
+    <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands"/>
+    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster"/>
+    <plugin filename="ignition-gazebo-buoyancy-system" name="ignition::gazebo::systems::Buoyancy">
+      <uniform_fluid_density>1000</uniform_fluid_density>
+    </plugin>
+
+    <scene><ambient>0.5 0.55 0.65 1</ambient><background>0.1 0.25 0.45 1</background></scene>
+    <light type="directional" name="sun">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.3 0.2 -1</direction>
+    </light>
+
+    <model name="havuz_zemin">
+      <static>true</static>
+      <link name="zemin">
+        <collision name="col"><pose>0 0 -3.05 0 0 0</pose><geometry><box><size>20 20 0.1</size></box></geometry></collision>
+        <visual name="vis"><pose>0 0 -3.05 0 0 0</pose><geometry><box><size>20 20 0.1</size></box></geometry><material><ambient>0.25 0.35 0.5 1.0</ambient><diffuse>0.25 0.35 0.5 1.0</diffuse></material></visual>
+        <visual name="gx-8"><pose>-8 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-8"><pose>0 -8 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-7"><pose>-7 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-7"><pose>0 -7 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-6"><pose>-6 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-6"><pose>0 -6 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-5"><pose>-5 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-5"><pose>0 -5 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-4"><pose>-4 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-4"><pose>0 -4 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-3"><pose>-3 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-3"><pose>0 -3 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-2"><pose>-2 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-2"><pose>0 -2 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx-1"><pose>-1 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy-1"><pose>0 -1 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx0"><pose>0 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.9 0.2 0.2 1.0</ambient><diffuse>0.9 0.2 0.2 1.0</diffuse></material></visual>
+<visual name="gy0"><pose>0 0 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.2 0.8 0.2 1.0</ambient><diffuse>0.2 0.8 0.2 1.0</diffuse></material></visual>
+<visual name="gx1"><pose>1 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy1"><pose>0 1 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx2"><pose>2 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy2"><pose>0 2 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx3"><pose>3 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy3"><pose>0 3 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx4"><pose>4 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy4"><pose>0 4 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx5"><pose>5 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy5"><pose>0 5 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx6"><pose>6 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy6"><pose>0 6 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx7"><pose>7 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy7"><pose>0 7 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gx8"><pose>8 0 -2.99 0 0 0</pose><geometry><box><size>0.03 16 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+<visual name="gy8"><pose>0 8 -2.99 0 0 0</pose><geometry><box><size>16 0.03 0.01</size></box></geometry><material><ambient>0.75 0.8 0.85 1.0</ambient><diffuse>0.75 0.8 0.85 1.0</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="su_yuzeyi">
+      <static>true</static>
+      <link name="yuzey">
+        <visual name="vis"><transparency>0.85</transparency><geometry><box><size>20 20 0.02</size></box></geometry><material><ambient>0.2 0.5 0.9 0.3</ambient><diffuse>0.2 0.5 0.9 0.3</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="kose_0_0"><static>true</static><pose>0 0 -2.5 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>1.0</length></cylinder></geometry><material><ambient>1.0 0.5 0.0 1.0</ambient><diffuse>1.0 0.5 0.0 1.0</diffuse></material></visual></link>
+    </model>
+    <model name="kose_4_0"><static>true</static><pose>4 0 -2.5 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>1.0</length></cylinder></geometry><material><ambient>1.0 0.5 0.0 1.0</ambient><diffuse>1.0 0.5 0.0 1.0</diffuse></material></visual></link>
+    </model>
+    <model name="kose_4_4"><static>true</static><pose>4 4 -2.5 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>1.0</length></cylinder></geometry><material><ambient>1.0 0.5 0.0 1.0</ambient><diffuse>1.0 0.5 0.0 1.0</diffuse></material></visual></link>
+    </model>
+    <model name="kose_0_4"><static>true</static><pose>0 4 -2.5 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>1.0</length></cylinder></geometry><material><ambient>1.0 0.5 0.0 1.0</ambient><diffuse>1.0 0.5 0.0 1.0</diffuse></material></visual></link>
+    </model>
+    <model name="daire_merkez"><static>true</static><pose>0 1 -2.85 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.05</radius><length>0.3</length></cylinder></geometry><material><ambient>0.6 0.2 0.9 1.0</ambient><diffuse>0.6 0.2 0.9 1.0</diffuse></material></visual></link>
+    </model>
+
+    <model name="auv">
+      <pose>0 0 -1.5 0 0 0</pose>
+      <link name="base_link">
+        <inertial>
+          <mass>13.042</mass>
+          <inertia><ixx>0.296</ixx><iyy>0.374</iyy><izz>0.579</izz></inertia>
+        </inertial>
+        <collision name="hazne_col"><pose>0 0 0 0 1.5708 0</pose><geometry><cylinder><radius>0.095</radius><length>0.46</length></cylinder></geometry></collision>
+        <visual name="hazne"><pose>0 0 0 0 1.5708 0</pose><geometry><cylinder><radius>0.095</radius><length>0.46</length></cylinder></geometry><material><ambient>0.15 0.15 0.17 1.0</ambient><diffuse>0.15 0.15 0.17 1.0</diffuse></material></visual>
+        <visual name="kubbe"><pose>0.23 0 0 0 0 0</pose><geometry><sphere><radius>0.0855</radius></sphere></geometry><material><ambient>0.5 0.55 0.6 0.6</ambient><diffuse>0.5 0.55 0.6 0.6</diffuse></material></visual>
+        <visual name="yon_isareti"><pose>0.05 0 0.098 0 0 0</pose><geometry><box><size>0.25 0.03 0.006</size></box></geometry><material><ambient>0.9 0.1 0.1 1.0</ambient><diffuse>0.9 0.1 0.1 1.0</diffuse></material></visual>
+        <visual name="kasnak_fr"><pose>0.18 -0.19 0 0 1.5708 0.7854</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_fr"><pose>0.18 -0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kasnak_fl"><pose>0.18 0.19 0 0 1.5708 -0.7854</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_fl"><pose>0.18 0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kasnak_rl"><pose>-0.18 0.19 0 0 1.5708 0.7854</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_rl"><pose>-0.18 0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kasnak_rr"><pose>-0.18 -0.19 0 0 1.5708 -0.7854</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_rr"><pose>-0.18 -0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kasnak_vl"><pose>0.0 0.19 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_vl"><pose>0.0 0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kasnak_vr"><pose>0.0 -0.19 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.06</length></cylinder></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+<visual name="kol_vr"><pose>0.0 -0.143 -0.01 0 0 0</pose><geometry><box><size>0.03 0.115 0.02</size></box></geometry><material><ambient>0.12 0.12 0.12 1.0</ambient><diffuse>0.12 0.12 0.12 1.0</diffuse></material></visual>
+      </link>
+
+
+
+      <plugin filename="ignition-gazebo-hydrodynamics-system" name="ignition::gazebo::systems::Hydrodynamics">
+        <link_name>base_link</link_name>
+
+        <xU>-22</xU>
+        <yV>-8</yV>
+        <zW>-10</zW>
+        <kP>-1.5</kP>
+        <mQ>-1.5</mQ>
+        <nR>-2</nR>
+      </plugin>
+
+    </model>
+  </world>
+</sdf>
